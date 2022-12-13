@@ -49,6 +49,11 @@ INSTALLED_APPS = [
 CRISPR_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
+#Custom user model
+
+AUTH_USER_MODEL = 'App_Login.User'
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
