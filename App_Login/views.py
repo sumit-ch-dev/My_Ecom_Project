@@ -22,7 +22,7 @@ def sign_up(request):
     return render(request, 'App_Login/sign_up.html', context={'form':form})
 
 
-def login_page(request):
+def login_user(request):
     form = AuthenticationForm()
     if request.method == 'POST':
         form = AuthenticationForm(data=request.POST)
