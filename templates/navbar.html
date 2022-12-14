@@ -1,8 +1,38 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-        <a class="navbar-brand" href="{% url 'App_Shop:home' %}"> My E Commerce Project </a>
-        <button type="button" class="navbar-toggle" data-toggle="collapse"
-        data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
-        aria-label="toggle-navigation"> <span class="navbar-toggler-icon"></span></button>
+<nav class="navbar navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'App_Shop:home' %}">My E Commerce Project</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="container">
+            <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
+                <ul class="navbar-nan ml-auto">
+                    {% if request.user.is_authenticated %}
+                    <li class="nav-item" style="padding-top: 10px;">
+                        <a href="" class="nav-link">
+                            <i class="fa-sharp fa-solid fa-cart-shopping">&nbsp; Cart</i>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown" style="padding-top: 10px;">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false"> <i class="fa-solid fa-user-tie">{{request.user.profile.username}}</i></a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{% url 'App_Login:profile' %}">Profile</a>
+                            <a class="dropdown-item" href="">Orders</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'App_Login:logout' %}">Logout</a>
+                        </div>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a href="{% url 'App_Login:login' %}" class="btn btn-primary">Login</a>
+                    </li>
+                    {%endif%}
+                </ul>
+            </div>
+        </div>
     </div>
 </nav>
