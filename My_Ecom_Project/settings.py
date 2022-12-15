@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'App_Login',
     'App_Shop',
+    'App_Order',
 ]
 
 CRISPR_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
