@@ -1,3 +1,4 @@
+{% load cart_tag %}
 <nav class="navbar navbar-light bg-light fixed-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'App_Shop:home' %}">My E Commerce Project</a>
@@ -13,6 +14,7 @@
                     <li class="nav-item" style="padding-top: 10px;">
                         <a href="{% url 'App_Order:cart' %}" class="nav-link">
                             <i class="fa-sharp fa-solid fa-cart-shopping">&nbsp; Cart</i>
+                            <span class="badge bg-secondary">{{ request.user | cart_total }}</span>
                         </a>
                     </li>
                     <li class="nav-item dropdown" style="padding-top: 10px;">
