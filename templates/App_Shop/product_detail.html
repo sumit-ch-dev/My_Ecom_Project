@@ -7,7 +7,7 @@
         <article class="gallery-wrap">
           <div class="img-big-wrap">
             <div>
-              <a href="#"><img src="/media/{{object.mainimage}}" style="width:300px"></a>
+              <a href="#"><img src="/media/{{object.mainimage}}" style="width:350px"></a>
             </div>
           </div>
         </article>
@@ -23,10 +23,11 @@
           <dl class="item-property">
             <dt>Description</dt>
             <dd>
-              <p>{{object.detail_text|linebreaks}}</p>
+              <p class="card-text">{{object.detail_text|linebreaks}}</p>
             </dd>
           </dl>
-          <a href="{% url 'App_Order:add' pk=object.pk %}" class="btn btn-lg btn-outline-primary text-uppercase"> <i class="fas fa-shopping-cart"></i> Add to
+          <a href="{% url 'App_Order:add' pk=object.pk %}" class="btn btn-lg btn-outline-primary text-uppercase"> <i
+              class="fas fa-shopping-cart"></i> Add to
             Cart</a>
         </article>
       </aside>
