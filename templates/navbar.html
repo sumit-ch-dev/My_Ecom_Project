@@ -11,7 +11,7 @@
                 <ul class="navbar-nan ml-auto">
                     {% if request.user.is_authenticated %}
                     <li class="nav-item" style="padding-top: 10px;">
-                        <a href="" class="nav-link">
+                        <a href="{% url 'App_Order:cart' %}" class="nav-link">
                             <i class="fa-sharp fa-solid fa-cart-shopping">&nbsp; Cart</i>
                         </a>
                     </li>
